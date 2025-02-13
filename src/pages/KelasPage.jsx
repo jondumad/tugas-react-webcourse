@@ -12,8 +12,10 @@ const KelasPage = () => {
 				<Container>
 					<Row>
 						<Col>
-							<h1 className="fw-bold text-center">Semua Kelas</h1>
-							<p className="text-center">
+							<h1 className="fw-bold text-center animate__animated animate__fadeInUp animate__delay-1s">
+								Semua Kelas
+							</h1>
+							<p className="text-center animate__animated animate__fadeInUp animate__delay-1s">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit.
 							</p>
 						</Col>
@@ -26,6 +28,9 @@ const KelasPage = () => {
 								md={6}
 								sm={12}
 								className="mb-4 shadow rounded"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay={kelas.delay}
 							>
 								<img
 									src={kelas.image}

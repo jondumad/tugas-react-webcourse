@@ -8,7 +8,9 @@ const FaqPage = () => {
 			<Container>
 				<Row>
 					<Col>
-						<h2 className="text-center fw-bold my-5">FAQ</h2>
+						<h2 className="text-center fw-bold my-5 animate__animated animate__fadeInUp animate__delay-1s">
+							Pertanyaan Yang Sering Ditanyakan
+						</h2>
 					</Col>
 				</Row>
 				<Row className="row-cols-lg-2 g-2 pt-5">

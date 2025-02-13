@@ -5,6 +5,8 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./dist/css/main.css";
 import ScrollToTop from "./components/ScrollToTop";
+import "animate.css";
+import Aos from "aos";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

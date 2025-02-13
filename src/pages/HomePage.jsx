@@ -23,25 +23,29 @@ const HomePage = () => {
 				<Container>
 					<Row className="header-box d-flex align-items-center pt-lg-5">
 						<Col lg="6">
-							<h1 className="mb-4">
+							<h1 className="mb-4 animate__animated animate__fadeInUp animate__delay-1s">
 								Temukan <br /> <span>Bakat Kreatifmu</span> Bersama Kami!
 							</h1>
-							<p className="mb-4">
+							<p className="mb-4 animate__animated animate__fadeInUp animate__delay-1s">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit.
 								Veritatis expedita doloribus est porro consequuntur impedit.
 							</p>
 							<button
-								className="btn btn-danger btn-lg rounded-1 me-2 mb-xs-0 mb-2"
+								className="btn btn-danger btn-lg rounded-1 me-2 mb-xs-0 mb-2 animate__animated animate__fadeInUp animate__delay-1s"
 								onClick={() => navigate("/kelas")}
 							>
 								Lihat Kelas
 							</button>
-							<button className="btn btn-outline-danger btn-lg rounded-1 mb-xs-0 mb-2">
+							<button className="btn btn-outline-danger btn-lg rounded-1 mb-xs-0 mb-2 animate__animated animate__fadeInUp animate__delay-1s">
 								Lihat Promo
 							</button>
 						</Col>
 						<Col lg="6" className="pt-lg-0 pt-5">
-							<img src={HeroImage} alt="hero-img" className="img-fluid" />
+							<img
+								src={HeroImage}
+								alt="hero-img"
+								className="img-fluid animate__animated animate__fadeInUp"
+							/>
 						</Col>
 					</Row>
 				</Container>
@@ -67,6 +71,9 @@ const HomePage = () => {
 								md={6}
 								sm={12}
 								className="mb-4 shadow rounded"
+								data-aos="fade-up"
+								data-aos-duration="1000"
+								data-aos-delay={kelas.delay}
 							>
 								<img
 									src={kelas.image}
@@ -97,6 +104,8 @@ const HomePage = () => {
 							<button
 								className="btn btn-success rounded-5 btn-lg"
 								onClick={() => navigate("/kelas")}
+								data-aos="fade-up"
+								data-aos-duration="1000"
 							>
 								Lihat Semua Kelas{" "}
 								<FontAwesomeIcon icon={faChevronRight} className="ms-1" />
