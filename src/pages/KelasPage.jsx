@@ -3,11 +3,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import { semuaKelas } from "../data/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import FaqComponent from "../components/FaqComponent";
 
 const KelasPage = () => {
 	return (
 		<div className="kelas-page">
-			<div className="kelas min-vh-199 ">
+			<div className="kelas">
 				<Container>
 					<Row>
 						<Col>
@@ -49,6 +50,18 @@ const KelasPage = () => {
 								</div>
 							</Col>
 						))}
+					</Row>
+				</Container>
+			</div>
+			<div className="faq">
+				<Container>
+					<Row>
+						<Col>
+							<h2 className="text-center fw-bold my-5">FAQ</h2>
+						</Col>
+					</Row>
+					<Row className="row-cols-lg-2 g-2 pt-5">
+						<FaqComponent />
 					</Row>
 				</Container>
 			</div>
