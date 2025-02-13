@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 import { kelasTerbaru, dataSwiper } from "../data";
+import { faq } from "../data/index";
+import FaqComponent from "../components/FaqComponent";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -103,6 +105,7 @@ const HomePage = () => {
 					</Row>
 				</Container>
 			</div>
+
 			<div className="testimonial py-5">
 				<Container>
 					<Row>
@@ -153,6 +156,18 @@ const HomePage = () => {
 								);
 							})}
 						</Swiper>
+					</Row>
+				</Container>
+			</div>
+			<div className="faq py-5">
+				<Container>
+					<Row>
+						<Col>
+							<h2 className="text-center fw-bold my-5">FAQ</h2>
+						</Col>
+					</Row>
+					<Row className="row-cols-lg-2 g-2 pt-5">
+						<FaqComponent />
 					</Row>
 				</Container>
 			</div>
