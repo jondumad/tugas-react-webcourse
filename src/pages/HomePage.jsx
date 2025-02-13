@@ -1,10 +1,16 @@
+import HeroImage from "../assets/img/hero.png";
 import React from "react";
-import { kelasTerbaru } from "../data";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import HeroImage from "../assets/img/hero.png"; // Import hero image
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
+import { kelasTerbaru, dataSwiper } from "../data";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const HomePage = () => {
 	const navigate = useNavigate();
@@ -13,7 +19,7 @@ const HomePage = () => {
 		<div className="homepage">
 			<header className="w-100 min-vh-100 d-flex align-items-center">
 				<Container>
-					<Row className="header-box d-flex align-items-center">
+					<Row className="header-box d-flex align-items-center pt-lg-5">
 						<Col lg="6">
 							<h1 className="mb-4">
 								Temukan <br /> <span>Bakat Kreatifmu</span> Bersama Kami!
@@ -41,9 +47,25 @@ const HomePage = () => {
 
 			<div className="kelas w-100 min-vh-100 py-5">
 				<Container>
+					<Row>
+						<Col>
+							<h1 className="text-center fw-bold">Kelas Terbaru</h1>
+							<p className="text-center">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+							</p>
+						</Col>
+					</Row>
+				</Container>
+				<Container>
 					<Row className="row">
 						{kelasTerbaru.map((kelas) => (
-							<Col key={kelas.id} lg={4} md={6} sm={12} className="mb-4">
+							<Col
+								key={kelas.id}
+								lg={4}
+								md={6}
+								sm={12}
+								className="mb-4 shadow rounded"
+							>
 								<img
 									src={kelas.image}
 									alt={kelas.title}
@@ -78,6 +100,59 @@ const HomePage = () => {
 								<FontAwesomeIcon icon={faChevronRight} className="ms-1" />
 							</button>
 						</Col>
+					</Row>
+				</Container>
+			</div>
+			<div className="testimonial py-5">
+				<Container>
+					<Row>
+						<Col>
+							<h1 className="text-center fw-bold my-5">Testimonial</h1>
+						</Col>
+					</Row>
+					<Row>
+						<Swiper
+							slidesPerView={1}
+							spaceBetween={10}
+							pagination={{
+								clickable: true,
+							}}
+							breakpoints={{
+								640: {
+									slidesPerView: 2,
+									spaceBetween: 20,
+								},
+								768: {
+									slidesPerView: 2,
+									spaceBetween: 40,
+								},
+								992: {
+									slidesPerView: 2,
+									spaceBetween: 50,
+								},
+								1200: {
+									slidesPerView: 3,
+									spaceBetween: 30,
+								},
+							}}
+							modules={[Pagination]}
+							className="mySwiper"
+						>
+							{dataSwiper.map((data) => {
+								return (
+									<SwiperSlide key={data.id} className="shadow-sm">
+										<p className="desc">{data.desc}</p>
+										<div className="people">
+											<img src={data.image} alt="" />
+											<div>
+												<h5 className="mb-1">{data.name}</h5>
+												<p className="m-0 fw-bold">{data.skill}</p>
+											</div>
+										</div>
+									</SwiperSlide>
+								);
+							})}
+						</Swiper>
 					</Row>
 				</Container>
 			</div>
