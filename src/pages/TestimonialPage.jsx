@@ -35,7 +35,18 @@ const TestimonialPage = () => {
 					</Row>
 				</Container>
 			</div>
-			<FaqComponent></FaqComponent>
+			<div className="faq">
+				<Container>
+					<Row>
+						<Col>
+							<h2 className="text-center fw-bold my-5">FAQ</h2>
+						</Col>
+					</Row>
+					<Row className="row-cols-lg-2 g-2 pt-5">
+						<FaqComponent />
+					</Row>
+				</Container>
+			</div>
 		</div>
 	);
 };
